@@ -1,0 +1,51 @@
+Ans 1).JSX is a React extension to the JavaScript language syntax which provides a way to structure component rendering using syntax familiar to many developers. It is similar in appearance to HTML.
+Ans 2).React. createClass allows you to generate component "classes." Under the hood, your component class is using a bespoke class system implemented by React. With ES6, React allows you to implement component classes that use ES6 JavaScript classes.
+Ans 4).What is the difference? The react package holds the react source for components, state, props and all the code that is react. The react-dom package as the name implies is the glue between React and the DOM. Often, you will only use it for one single thing: mounting your application to the index
+Ans 3).The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+Ans 5).A functional component is just a plain JavaScript pure function that accepts props as an argument and returns a React element(JSX). A class component requires you to extend from React. Component and create a render function which returns a React element.
+Ans 6).Props are used to pass data from one component to another. The state is a local data storage that is local to the component only and cannot be passed to other components
+Ans 7).A controlled component is a component that renders form elements and controls them by keeping the form data in the component's state. In a controlled component, the form element's data is handled by the React component (not DOM) and kept in the component's state.
+Ans 8).A higher-order component (HOC) is an advanced technique in React for reusing component logic. HOCs are not part of the React API, per se. They are a pattern that emerges from React's compositional nature. Concretely, a higher-order component is a function that takes a component and returns a new component
+Ans 9).Create React App (CRA) is a tool to create single-page React applications that is officially supported by the React team. The script generates the required files and folders to start the React application and run it on the browser.
+Ans 10).
+Ans 11).A function is said to be pure if the return value is determined by its input values only and the return value is always the same for the same input values. A React component is said to be pure if it renders the same output for the same state and props.
+Ans 12).<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    $arr = // your array;
+echo "<ul>";
+foreach($arr as $setting => $nested) {
+    echo "<li>$setting<ul>";
+    foreach($nested as $category => $nested2) {
+        echo "<li>$category</li><ul>";
+        foreach($nested2 as $view) {
+            echo "<li>$view</li>";
+        }
+        echo "</ul></li>";
+    }
+    echo "</ul></li>";
+}
+echo "</ul>";
+</script>
+</body>
+</html>
+Ans 13).class App extends React.Component {
+  render() {
+    return(
+      <View
+        onEventA={(evt) => console.log('onEventA')}
+        onEventB={(evt) => console.log('onEventB')}>
+        <View
+          onEventACapture={(evt) => evt.stopPropagation()}
+        />
+      </View>
+    )
+  }
+Ans 14).

@@ -1,0 +1,226 @@
+Ans 1).HTML5 is a markup language used for structuring and presenting content on the World Wide Web. It is the fifth and final[3] major HTML version that is a World Wide Web Consortium (W3C) recommendation. The current specification is known as the HTML Living Standard. It is maintained by the Web Hypertext Application Technology Working Group (WHATWG), a consortium of the major browser vendors (Apple, Google, Mozilla, and Microsoft)
+Ans 2). <!Doctype>
+	<html>
+	<head>
+	<title></title>
+	</head>
+	<body>
+	<p></p>
+	<h1></h1>
+	<script></script>	
+	</body>
+	</html>
+Ans 3).Any content-based style tag may contain any item allowed in text, including conventional text, anchors, images, and line breaks. In addition, other content-based and physical style tags can be embedded within the content
+Ans 4).Cascading Style Sheets Level 3 (CSS3) is the iteration of the CSS standard used in the styling and formatting of Web pages. CSS3 incorporates the CSS2 standard with some changes and improvements. A key change is the division of standard into separate modules, which makes it easier to learn and understand.
+Ans 5).So what are transforms and transitions? At their most basic level, transforms move or change the appearance of an element, while transitions make the element smoothly and gradually change from one state to another.
+Ans 6).The CSS 2D transforms are used to re-change the structure of the element as translate, rotate, scale and skew etc. Following is a list of 2D transforms methods: translate(x,y): It is used to transform the element along X-axis and Y-axis. translateX(n): It is used to transform the element along X-axis.
+Ans 7).JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. 
+Ans 8).In Javascript, popup boxes are used to display the message or notification to the user. There are three types of pop-up boxes in JavaScript namely Alert Box, Confirm Box and Prompt Box
+Ans 9).JavaScript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page. When the page loads, it is called an event. When the user clicks a button, that click too is an event.
+Ans 10).JavaScript Output defines the ways to display the output of a given code. The output can be display by using four different ways which are listed below: 1)innerHTML,2)documnet.write,3)window.alert,4)console.log
+Ans 11).Writing into an HTML element, using innerHTML .
+	Writing into the HTML output using document.write() .
+	Writing into an alert box, using window.alert() .
+	Writing into the browser console, using console.log() .
+Ans 12).<html>
+	<head>
+	<title></title>
+	<body>
+	<p id="myid"></p>
+	<button type="button" name="btn" onclick="display()">Press me</button>
+	<script>
+	var status = 1
+	function display()
+	{
+		if(status ==1){
+			document.getElementById("myid").innerHTML ="hello";
+			status = 0;
+				}
+		else{
+			document.getElementById("myid").innerHTML = "hi";
+		     }
+	}
+	</script>
+	</body>
+	</head>
+	</html>
+Ans 13).<html>
+<head>
+  <title>Select Image</title>
+  <script type="text/javascript">
+  function displayImage() {
+    var image = document.getElementById("canvas");
+    var newImage = image.option[image.selectedIndex].value;
+  }
+  </script>
+</head>
+<body>
+  <form name="controls">
+    <img id="canvas" src="pictures/fire1.jpg" />
+    <select name="imageList" onchange="displayImage();">
+      <option value="src/download(1).jpg">Fire 1</option>
+      <option value="src/download.jpg">Fire 2</option>
+</select>
+  </form>
+</body>
+</html>
+Ans 14).<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=5;
+        var b=5;
+        var c =a+b;
+         document.write("this is the ans of " + c);
+         
+    </script>
+</body>
+</html>
+Ans 15).<!DOCTYPE html>
+<html>
+<body>
+
+<p>When you enter the input field, a function is triggered which sets the background color to yellow. When you leave the input field, a function is triggered which sets the background color to red.</p>
+
+Enter your name: <input type="text" id="myInput" onfocus="focusFunction()" onblur="blurFunction()">
+
+<script>
+
+function focusFunction() {
+  document.getElementById("myInput").style.background = "yellow";
+}
+
+
+function blurFunction() {
+  document.getElementById("myInput").style.background = "red";
+}
+</script>
+
+</body>
+</html>
+Ans 16).<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The embed element</h1>
+
+<embed type="image/jpg" src="pic_trulli.jpg" width="300" height="200">
+
+</body>
+</html>
+Ans 17).<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+
+div:hover {
+  width: 300px;
+}
+</style>
+</head>
+<body>
+
+<h1>The transition Property</h1>
+
+<p>Hover over the div element below, to see the transition effect:</p>
+<div></div>
+
+</body>
+</html>
+
+Ans 18).<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /* Functions to get the value main purpose to reduce redundancy*/
+        function getValue(firstNumber, secondNumber){
+            x = document.getElementById("firstNumber").value;
+            y = document.getElementById("secondNumber").value;
+        }
+        /*Function to add two numbers*/
+        function add() {
+            /* Get the value to add numbers*/
+            getValue();
+            /*The Number() function converts the object argument to a number
+              that represents the object's value*/
+            sum=Number(x)+Number(y);
+            /*print the number after addition*/
+            document.getElementById("result").innerHTML =  x+" + "+y+" = "+sum;
+        }
+        /*Function to subtract two numbers*/
+        function sub() {
+            /* Get the value to subtract numbers*/
+            getValue();
+            /*The Number() function converts the object argument to a number
+              that represents the object's value*/
+            sub=Number(x)-Number(y);
+            /*print the number after subtraction*/
+            document.getElementById("result").innerHTML = x+" - "+y+" = "+sub;
+        }
+        /*Function to multiply two numbers*/
+        function mul() {
+            /* Get the value to multiply numbers*/
+            getValue();
+            /*The Number() function converts the object argument to a number
+              that represents the object's value*/
+            mul=Number(x)*Number(y);
+            /*print the number after multiplication*/
+            document.getElementById("result").innerHTML = x+" * "+y+" = "+mul;
+        }
+        /*Function to divide two numbers*/
+        function div() {
+            /* Get the value to divide numbers*/
+            getValue();
+            /*The Number() function converts the object argument to a number
+              that represents the object's value*/
+            div=Number(x)/Number(y);
+            /*print the number after division*/
+            document.getElementById("result").innerHTML = x+" / "+y+" = "+div;
+        }
+    </script>
+    <table>
+        <h1>Online Calculator</h1>
+        <tr>
+          <td>Enter a first number : </td>
+          /*Get first input*/
+          <td><input type="text" id="firstNumber"  required /></td>
+        </tr>
+        <tr>
+          /*Get second input*/
+          <td>Enter a second number : </td>
+          <td><input type="text" id="secondNumber" required /></td>
+        </tr>
+      </table>
+      <br/>
+      /*Function for Addition*/
+      <button onclick="add()">Add</button>
+      /*Function for Substraction*/
+      <button onclick="sub()">Substract</button>
+      /*Function for Multiplication*/
+      <button onclick="mul()">Multiply</button>
+      /*Function for Division*/
+      <button onclick="div()">Divide</button><br/>
+      /*For showing result*/
+      <p id="result">Result</p>
+</body>
+</html>
+
+
