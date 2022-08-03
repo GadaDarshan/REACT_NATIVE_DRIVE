@@ -1,0 +1,384 @@
+B1)React Native is an open-source UI software framework created by Meta Platforms, Inc. It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows and UWP by enabling developers to use the React framework along with native platform capabilities
+B2)React Native brings React's declarative UI framework to iOS and Android. With React Native, you use native UI controls and have full access to the native platform.
+
+Declarative. React makes it painless to create interactive UIs. Declarative views make your code more predictable and easier to debug.
+Component-Based. Build encapsulated components that manage their state, then compose them to make complex UIs.
+Developer Velocity. See local changes in seconds. Changes to JavaScript code can be live reloaded without rebuilding the native app.
+Portability. Reuse code across iOS, Android, and other platforms.
+B3)React Native uses Node. js, a JavaScript runtime, to build your JavaScript code. Node. js is a server-side JavaScript runtime environment.
+B4)Command line tools that ship with react-native in form of the @react-native-community/cli package. It exposes react-native binary, so you can call yarn react-native or npx react-native directly from your project.
+B5)The components are as follows
+	Core Components and APIs.
+	1)ActivityIndicator.
+	2)Button.
+	3)FlatList.
+	4)Image.
+	5)KeyboardAvoidingView.
+	6)Modal.
+	7)Pressable.
+B6)Headers are navigation components that display information and actions relating to the current screen.
+I1)For installing React-Native in windows follow the steps
+	1)Install create-react-native-app
+	2)Create project
+	3)Install node js ,pyathon, jdk
+	4)Install React Native CLI
+	6)Start react-native.
+I2)Once you installed Node.js on your computer, you can check the version of npm that was bundled with it.
+
+The command to check your npm version is npm -v or npm --version. Type it in your terminal and you should see the following output:
+I3)	1)Open cmd and type 'react-native --v' or 'react-native --version'
+	2)Open your project and open package.json file. U will see react-native version.
+I4)
+React Native - Switch
+Step 1: Create File. We will use the HomeContainer component for logic, but we need to create the presentational component. ...
+Step 2: Logic. We are passing value from the state and functions for toggling switch items to SwitchExample component. ...
+Step 3: Presentation. Switch component takes two props.
+I5)import React, { Component } from 'react'  
+import { Text, ListView, StyleSheet } from 'react-native'  
+  
+export default class MyListComponent extends Component {  
+    constructor() {  
+        super();  
+        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});  
+        this.state = {  
+            dataSource: ds.cloneWithRows(['Android','iOS', 'Java','Php', 'Hadoop',  
+                'Sap', 'Python','Ajax', 'C++',  
+                'Ruby', 'Rails','.Net', 'Perl']),  
+        };  
+    }  
+  
+    render() {  
+        return (  
+            <ListView  
+                dataSource={this.state.dataSource}  
+                renderRow={  
+                    (rowData) =>  
+                        <Text style={{fontSize: 20}}>{rowData}</Text>}  
+            />  
+        );  
+    }  
+}  
+I6)import React from "react";
+import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+
+const UselessTextInput = () => {
+  const [text, onChangeText] = React.useState("Useless Text");
+  const [number, onChangeNumber] = React.useState(null);
+
+  return (
+    <SafeAreaView>
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeText}
+        value={text}
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="useless placeholder"
+        keyboardType="numeric"
+      />
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
+
+export default UselessTextInput;
+I8)import React from 'react';
+import { View, Image, StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 50,
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  },
+  logo: {
+    width: 66,
+    height: 58,
+  },
+});
+
+const DisplayAnImage = () => {
+  return (
+    <View style={styles.container}>
+      <Image
+        style={styles.tinyLogo}
+        source={require('@expo/snack-static/react-native-logo.png')}
+      />
+      <Image
+        style={styles.tinyLogo}
+        source={{
+          uri: 'https://reactnative.dev/img/tiny_logo.png',
+        }}
+      />
+      <Image
+        style={styles.logo}
+        source={{
+          uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
+        }}
+      />
+    </View>
+  );
+}
+
+export default DisplayAnImage;
+I9)import React, { useRef, useState } from "react";
+import { Button, DrawerLayoutAndroid, Text, StyleSheet, View } from "react-native";
+
+const App = () => {
+  const drawer = useRef(null);
+  const [drawerPosition, setDrawerPosition] = useState("left");
+  const changeDrawerPosition = () => {
+    if (drawerPosition === "left") {
+      setDrawerPosition("right");
+    } else {
+      setDrawerPosition("left");
+    }
+  };
+
+  const navigationView = () => (
+    <View style={[styles.container, styles.navigationContainer]}>
+      <Text style={styles.paragraph}>I'm in the Drawer!</Text>
+      <Button
+        title="Close drawer"
+        onPress={() => drawer.current.closeDrawer()}
+      />
+    </View>
+  );
+
+  return (
+    <DrawerLayoutAndroid
+      ref={drawer}
+      drawerWidth={300}
+      drawerPosition={drawerPosition}
+      renderNavigationView={navigationView}
+    >
+      <View style={styles.container}>
+        <Text style={styles.paragraph}>
+          Drawer on the {drawerPosition}!
+        </Text>
+        <Button
+          title="Change Drawer Position"
+          onPress={() => changeDrawerPosition()}
+        />
+        <Text style={styles.paragraph}>
+          Swipe from the side or press button below to see it!
+        </Text>
+        <Button
+          title="Open drawer"
+          onPress={() => drawer.current.openDrawer()}
+        />
+      </View>
+    </DrawerLayoutAndroid>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 16
+  },
+  navigationContainer: {
+    backgroundColor: "#ecf0f1"
+  },
+  paragraph: {
+    padding: 16,
+    fontSize: 15,
+    textAlign: "center"
+  }
+});
+
+export default App;
+I10)import React from "react";
+import { Button, PermissionsAndroid, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+
+const requestCameraPermission = async () => {
+  try {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.CAMERA,
+      {
+        title: "Cool Photo App Camera Permission",
+        message:
+          "Cool Photo App needs access to your camera " +
+          "so you can take awesome pictures.",
+        buttonNeutral: "Ask Me Later",
+        buttonNegative: "Cancel",
+        buttonPositive: "OK"
+      }
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      console.log("You can use the camera");
+    } else {
+      console.log("Camera permission denied");
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+};
+
+const App = () => (
+  <View style={styles.container}>
+    <Text style={styles.item}>Try permissions</Text>
+    <Button title="request permissions" onPress={requestCameraPermission} />
+  </View>
+);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    paddingTop: StatusBar.currentHeight,
+    backgroundColor: "#ecf0f1",
+    padding: 8
+  },
+  item: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center"
+  }
+});
+
+export default App;
+I11)import React from 'react'
+import { Button, ScrollView, Text, TextInput, View } from 'react-native'
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <ScrollView>
+      <View>
+        <Text style={{margin:2,padding:10,textAlign:"center"}}>First Name:</Text>
+        <TextInput style={{margin:2,padding:10,alignItems:"center",textAlign:"center",backgroundColor:"pink"}}placeholder="Enter First Name"></TextInput>
+        <Text style={{margin:2,padding:10,textAlign:"center"}}>Last Name:</Text>
+        <TextInput style={{margin:2,padding:10,alignItems:"center",textAlign:"center",backgroundColor:"pink"}}placeholder="Enter Last Name"></TextInput>
+        <Text style={{margin:2,padding:10,textAlign:"center"}}>Age:</Text>
+        <TextInput style={{margin:2,padding:10,alignItems:"center",textAlign:"center",backgroundColor:"pink"}}placeholder="Enter Age"></TextInput>
+        <Text style={{margin:2,padding:10,textAlign:"center"}}>Gender:</Text>
+        <TextInput style={{margin:2,padding:10,alignItems:"center",textAlign:"center",backgroundColor:"pink"}}placeholder="Enter Gender"></TextInput>
+        <Text style={{margin:2,padding:10,textAlign:"center"}}>Product Name:</Text>
+        <TextInput style={{margin:2,padding:10,alignItems:"center",textAlign:"center",backgroundColor:"pink"}}placeholder="Enter Product Name"></TextInput>
+        <Text style={{margin:2,padding:10,textAlign:"center"}}>Product QTY</Text>
+        <TextInput style={{margin:2,padding:10,alignItems:"center",textAlign:"center",backgroundColor:"pink"}}placeholder="Enter Qty"></TextInput>
+        <Text>--------------------------------------------------------------------------------------------------</Text>
+        <Text style={{margin:2,padding:2,fontSize:18,textAlign:"left"}}>Today's Price per gm is : 5,331</Text>
+        <Text style={{margin:2,padding:2,fontSize:18,textAlign:"left"}}>Making Charges 8% : </Text>
+        <Text style={{margin:2,padding:2,fontSize:18,textAlign:"left"}}>Amount : </Text>
+        <Text style={{margin:2,padding:2,fontSize:18,textAlign:"left"}}>Discount Allowed : </Text>
+        <Text>--------------------------------------------------------------------------------------------------</Text>
+        <Text style={{margin:2,padding:2,fontSize:22,textAlign:"left"}}>Net Payable Amout : </Text>
+        <Button title='Click To genarate Bill'></Button>
+      </View>
+      </ScrollView>
+    )
+  }
+}
+I12)import React, { useState } from "react";
+import { ActionSheetIOS, Button, StyleSheet, Text, View } from "react-native";
+
+const App = () => {
+  const [result, setResult] = useState("🔮");
+
+  const onPress = () =>
+    ActionSheetIOS.showActionSheetWithOptions(
+      {
+        options: ["Cancel", "Generate number", "Reset"],
+        destructiveButtonIndex: 2,
+        cancelButtonIndex: 0,
+        userInterfaceStyle: 'dark'
+      },
+      buttonIndex => {
+        if (buttonIndex === 0) {
+          // cancel action
+        } else if (buttonIndex === 1) {
+          setResult(Math.floor(Math.random() * 100) + 1);
+        } else if (buttonIndex === 2) {
+          setResult("🔮");
+        }
+      }
+    );
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.result}>{result}</Text>
+      <Button onPress={onPress} title="Show Action Sheet" />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center"
+  },
+  result: {
+    fontSize: 64,
+    textAlign: "center"
+  }
+});
+
+export default App;
+I13)import React from 'react'
+import { Alert, Pressable, StyleSheet, Text, TouchableNativeFeedback, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+
+export default class App extends React.Component {
+    myonpress(){
+        Alert.alert("Hello welcome to react-native")
+    }
+  render() {
+    return (
+      <View>
+        {/* <TouchableNativeFeedback onPress={this.myonpress} background={TouchableNativeFeedback.SelectableBackground()}>
+            <View>
+                <Text style={{color:"black"}}>Only for android</Text>
+            </View>
+        </TouchableNativeFeedback>
+             {/* <TouchableOpacity  onPress={this.myonpress}> */}
+                {/* <Text> TouchableOpacity</Text>
+                </TouchableOpacity> */} 
+                {/* <TouchableWithoutFeedback>
+                  <View>
+                    <Text>
+                      Lable
+                    </Text>
+                  </View>
+                </TouchableWithoutFeedback> */}
+                <Pressable style={style.button}onPress={this.myonpress}>
+                  <Text style={{color:"black"}}>Click Me!</Text>
+                </Pressable>
+      </View>
+    ); 
+  }
+}
+const style=StyleSheet.create({
+  button:{
+    width:50,
+    height:20,
+    backgroundColor:"blue",
+    alignItems:"center",
+    justifyContent:"center",
+    marginLeft:170,
+    marginTop:170,
+  },
+})
+A1)npx react-native upgrade
+A2)The commond for creating first app in react-native are 
+as follow
+1)npm install react-native.
+2)npx react-native init myproject.
+3)cd myproject.
+4)npx react-native run-android.
